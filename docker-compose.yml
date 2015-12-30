@@ -1,0 +1,19 @@
+web:
+  build: 'dockerfiles/webapp'
+  ports:
+    - '3000:3000'
+  volumes:
+    - .:/app
+  environment:
+    - NODE_ENV=development
+    - DEBUG=homebrew
+  links:
+    - db
+    - redis
+db:
+  build: 'dockerfiles/postgres'
+  environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=password
+redis:
+  build: 'dockerfiles/redis'

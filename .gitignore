@@ -1,0 +1,10 @@
+.DS_Store
+.sass-cache
+*env
+*bak
+npm-debug.log
+*.log
+node_modules/
+dist/
+semantic/
+dump.rdb
